@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Ventas registradas</h2>
+    <table class="table table-striped">
+        <thead><tr><th>ID</th><th>Fecha</th><th>Total</th></tr></thead>
+        <tbody>
+        {% for v in ventas %}
+            <tr>
+                <td>{{ v[0] }}</td>
+                <td>{{ v[1] }}</td>
+                <td>${{ v[2] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-primary" href="/ventas/nueva">Registrar nueva venta</a>
+{% endblock %}
